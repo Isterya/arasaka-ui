@@ -1,3 +1,3 @@
-import './lib/core';
+import './lib/lib';
 
-$('div');
+$('.active').toggle().toggle();
