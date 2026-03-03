@@ -7,3 +7,11 @@ $.prototype.addClass = function(...classNames) {
 
     return this;
 };
+
+$.prototype.removeClass = function(...classNames) {
+    for (let i = 0; i < this.length; i++) {
+        this[i].classList.remove(...classNames);
+    }
+
+    return this;
+};
