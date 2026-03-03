@@ -70,6 +70,12 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeClass = function (
   }
   return this;
 };
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleClass = function (classNames) {
+  for (let i = 0; i < this.length; i++) {
+    this[i].classList.toggle(classNames);
+  }
+  return this;
+};
 
 /***/ },
 
