@@ -1,3 +1,3 @@
 import './lib/lib';
 
-$('.active').addClass('hidden', 'checked');
+$('.active').toggleClass('hidden');
