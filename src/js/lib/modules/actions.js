@@ -21,3 +21,15 @@ $.prototype.off = function(eventName, callback) {
 
     return this;
 }
+
+$.prototype.click = function(handler) {
+    for (let i = 0; i < this.length; i++) {
+        if (handler) {
+            this[i].addEventListener('click', handler);
+        }  else {
+            this[i].click();
+        }
+    }
+
+    return this;
+}
