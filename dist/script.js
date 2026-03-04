@@ -107,16 +107,24 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
 
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addAttribute = function (name, value) {
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addAttr = function (name, value = '') {
   for (let i = 0; i < this.length; i++) {
-    if (!value) value = '';
+    if (!this[i].setAttribute) continue;
     this[i].setAttribute(name, value);
   }
   return this;
 };
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeAttribute = function (name) {
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeAttr = function (name) {
   for (let i = 0; i < this.length; i++) {
+    if (!this[i].setAttribute) continue;
     this[i].removeAttribute(name);
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleAttr = function (name) {
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].setAttribute) continue;
+    this[i].toggleAttribute(name);
   }
   return this;
 };
@@ -146,10 +154,10 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeClass = function (
   }
   return this;
 };
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleClass = function (classNames) {
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleClass = function (className) {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].classList) continue;
-    this[i].classList.toggle(classNames);
+    this[i].classList.toggle(className);
   }
   return this;
 };
@@ -275,7 +283,7 @@ __webpack_require__.r(__webpack_exports__);
 //     $(this).toggleClass('active');
 // })
 
-(0,_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button');
+(0,_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button').toggleAttr('disabled');
 })();
 
 /******/ })()

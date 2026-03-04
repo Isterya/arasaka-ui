@@ -4,4 +4,4 @@ import $ from './lib/lib';
 //     $(this).toggleClass('active');
 // })
 
-$('button');
+$('button').toggleAttr('disabled');
