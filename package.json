@@ -9,8 +9,10 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"autoprefixer": "^10.4.14",
-		"sass": "^1.63.3"
+		"autoprefixer": "^10.4.27",
+		"postcss": "^8.5.8",
+		"sass": "^1.97.3",
+		"vite": "^7.3.1"
 	},
 	"browserslist": [
 		"last 2 chrome versions",
