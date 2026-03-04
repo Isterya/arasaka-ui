@@ -5,6 +5,7 @@ $.prototype.show = function() {
     if (!this[i].style) {
       continue;
     }
+
     this[i].style.display = '';
   }
 
@@ -16,6 +17,7 @@ $.prototype.hide = function() {
     if (!this[i].style) {
       continue;
     }
+
     this[i].style.display = 'none';
   }
 
