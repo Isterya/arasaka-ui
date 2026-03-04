@@ -109,9 +109,14 @@ __webpack_require__.r(__webpack_exports__);
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addAttribute = function (name, value) {
   for (let i = 0; i < this.length; i++) {
-    // if (!this[i].classList) continue;
-
+    if (!value) value = '';
     this[i].setAttribute(name, value);
+  }
+  return this;
+};
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeAttribute = function (name) {
+  for (let i = 0; i < this.length; i++) {
+    this[i].removeAttribute(name);
   }
   return this;
 };
@@ -270,7 +275,7 @@ __webpack_require__.r(__webpack_exports__);
 //     $(this).toggleClass('active');
 // })
 
-(0,_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button').addAttribute('disabled', true);
+(0,_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button');
 })();
 
 /******/ })()
