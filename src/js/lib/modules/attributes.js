@@ -1,31 +1,31 @@
 import $ from '../core';
 
-$.prototype.addAttr = function(name, value = '') {
-    for (let i = 0; i < this.length; i++) {
-        if (!this[i].setAttribute) continue;
+$.prototype.addAttr = function (name, value = '') {
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].setAttribute) continue;
 
-        this[i].setAttribute(name, value);
-    }
+    this[i].setAttribute(name, value);
+  }
 
-    return this;
-}
+  return this;
+};
 
-$.prototype.removeAttr = function(name) {
-    for (let i = 0; i < this.length; i++) {
-        if (!this[i].setAttribute) continue;
+$.prototype.removeAttr = function (name) {
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].setAttribute) continue;
 
-        this[i].removeAttribute(name);
-    }
+    this[i].removeAttribute(name);
+  }
 
-    return this;
-}
+  return this;
+};
 
-$.prototype.toggleAttr = function(name) {
-    for (let i = 0; i < this.length; i++) {
-        if (!this[i].setAttribute) continue;
+$.prototype.toggleAttr = function (name) {
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].setAttribute) continue;
 
-        this[i].toggleAttribute(name);
-    }
+    this[i].toggleAttribute(name);
+  }
 
-    return this;
-}
+  return this;
+};
