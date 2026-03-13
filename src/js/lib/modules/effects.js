@@ -9,9 +9,9 @@ $.prototype.animationOverTime = function (dur, cb, fin) {
     }
 
     let timeElapsed = time - timeStart;
-    let complection = Math.min(timeElapsed / dur, 1);
+    let completion = Math.min(timeElapsed / dur, 1);
 
-    cb(complection);
+    cb(completion);
 
     if (timeElapsed < dur) {
       requestAnimationFrame(_animateOverTime);
@@ -23,4 +23,19 @@ $.prototype.animationOverTime = function (dur, cb, fin) {
   }
 
   return _animateOverTime();
+};
+
+$.prototype.fadeIn = function (dur, display, fin) {
+  for (let i = 0; i < this.length; i++) {
+    this[i].style.display = display || 'block';
+
+    const _fadeIn = (completion) => {
+      this[i].style.opacity = completion;
+    };
+
+    const ani = this.animationOverTime(dur, _fadeIn, fin);
+    requestAnimationFrame(ani);
+  }
+
+  return this;
 };
