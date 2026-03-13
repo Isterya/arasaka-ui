@@ -17,3 +17,5 @@ import $ from './lib/lib';
 // console.log($('.more').eq(0).siblings())
 
 $('.active').html(`<div>${$('button').html()}</div>`);
+
+$('.findme').fadeOut(1800);

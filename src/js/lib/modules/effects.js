@@ -22,7 +22,7 @@ $.prototype.animationOverTime = function (dur, cb, fin) {
     }
   }
 
-  return _animateOverTime();
+  return _animateOverTime;
 };
 
 $.prototype.fadeIn = function (dur, display, fin) {
@@ -34,6 +34,23 @@ $.prototype.fadeIn = function (dur, display, fin) {
     };
 
     const ani = this.animationOverTime(dur, _fadeIn, fin);
+    requestAnimationFrame(ani);
+  }
+
+  return this;
+};
+
+$.prototype.fadeOut = function (dur, fin) {
+  for (let i = 0; i < this.length; i++) {
+    const _fadeOut = (completion) => {
+      this[i].style.opacity = 1 - completion;
+
+      if (completion === 1) {
+        this[i].style.display = 'none';
+      }
+    };
+
+    const ani = this.animationOverTime(dur, _fadeOut, fin);
     requestAnimationFrame(ani);
   }
 
