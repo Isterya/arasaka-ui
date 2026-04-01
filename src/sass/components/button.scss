@@ -19,4 +19,14 @@
     background-color: lighten($primary, 10%);
     color: #fff;
   }
+
+  &-primary {
+    background-color: $primary;
+    border-color: $primary;
+    color: #fff;
+    
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+  }
 }
