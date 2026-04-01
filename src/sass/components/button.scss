@@ -59,4 +59,14 @@
       background-color: darken($warning, 10%);
     }
   }
+
+  &-dark {
+    background-color: $dark;
+    border-color: $dark;
+    color: #fff;
+
+    &:hover {
+      background-color: darken($dark, 10%);
+    }
+  }
 }
