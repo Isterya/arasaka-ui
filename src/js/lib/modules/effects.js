@@ -1,5 +1,7 @@
 import $ from '../core';
 
+// TODO: refactor all methods
+
 $.prototype.animationOverTime = function (dur, cb, fin) {
   let timeStart;
 
@@ -48,6 +50,8 @@ $.prototype.fadeOut = function (dur, fin) {
       if (completion === 1) {
         this[i].style.display = 'none';
       }
+
+      this[i].style.opacity = completion;
     };
 
     const ani = this.animationOverTime(dur, _fadeOut, fin);
