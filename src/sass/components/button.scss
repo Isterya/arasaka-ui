@@ -49,4 +49,14 @@
       background-color: darken($danger, 10%);
     }
   }
+
+  &-warning {
+    background-color: $warning;
+    border-color: $warning;
+    color: #fff;
+
+    &:hover {
+      background-color: darken($warning, 10%);
+    }
+  }
 }
