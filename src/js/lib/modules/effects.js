@@ -50,8 +50,6 @@ $.prototype.fadeOut = function (dur, fin) {
       if (completion === 1) {
         this[i].style.display = 'none';
       }
-
-      this[i].style.opacity = completion;
     };
 
     const ani = this.animateOverTime(dur, _fadeOut, fin);
@@ -79,8 +77,6 @@ $.prototype.fadeToggle = function (dur, display, fin) {
         if (completion === 1) {
           this[i].style.display = 'none';
         }
-
-        this[i].style.opacity = completion;
       };
 
       const ani = this.animateOverTime(dur, _fadeOut, fin);
