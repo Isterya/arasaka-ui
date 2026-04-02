@@ -13,3 +13,16 @@ $('button')
   .on('click', () => {
     $('.w-500').fadeToggle(800);
   });
+
+$('.wrap').html(
+  `<div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>
+        <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Action #2</a>
+            <a class="dropdown-item" href="#">Action #3</a>
+        </div>
+   </div>`
+);
+
+$('.dropdown-toggle').dropdown();
