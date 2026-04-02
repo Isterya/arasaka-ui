@@ -2,7 +2,7 @@ import $ from '../core';
 
 // TODO: refactor all methods
 
-$.prototype.animationOverTime = function (dur, cb, fin) {
+$.prototype.animateOverTime = function (dur, cb, fin) {
   let timeStart;
 
   function _animateOverTime(time) {
@@ -35,7 +35,7 @@ $.prototype.fadeIn = function (dur, display, fin) {
       this[i].style.opacity = completion;
     };
 
-    const ani = this.animationOverTime(dur, _fadeIn, fin);
+    const ani = this.animateOverTime(dur, _fadeIn, fin);
     requestAnimationFrame(ani);
   }
 
@@ -54,7 +54,7 @@ $.prototype.fadeOut = function (dur, fin) {
       this[i].style.opacity = completion;
     };
 
-    const ani = this.animationOverTime(dur, _fadeOut, fin);
+    const ani = this.animateOverTime(dur, _fadeOut, fin);
     requestAnimationFrame(ani);
   }
 
