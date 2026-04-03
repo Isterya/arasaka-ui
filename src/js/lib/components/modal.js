@@ -19,6 +19,13 @@ $.prototype.modal = function () {
       document.body.style.overflow = '';
     });
   });
+
+  $('.modal').click((e) => {
+    if (e.target.classList.contains('modal')) {
+      $('.modal').fadeOut(500);
+      document.body.style.overflow = '';
+    }
+  });
 };
 
 $('[data-toggle="modal"]').modal();
