@@ -1,33 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Library</title>
-    <link rel="stylesheet" href="/sass/style.scss">
-</head>
-<body>
+    <link rel="stylesheet" href="/sass/style.scss" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn btn-primary m20" id="first">
+        Fade out first text
+      </button>
+      <button class="btn btn-dark m20" data-count="second">
+        Fade out second text
+      </button>
+      <button class="btn btn-warning m20">Fade out all texts</button>
 
-<div class="container">
-    <button class="btn btn-primary m20" id="first">Fade out first text</button>
-    <button class="btn btn-dark m20" data-count="second">Fade out second text</button>
-    <button class="btn btn-warning m20">Fade out all texts</button>
+      <!-- Dropdown menu -->
+      <!--    <div class="dropdown">-->
+      <!--        <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>-->
+      <!--        <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">-->
+      <!--            <a class="dropdown-item" href="#">Action</a>-->
+      <!--            <a class="dropdown-item" href="#">Action #2</a>-->
+      <!--            <a class="dropdown-item" href="#">Action #3</a>-->
+      <!--        </div>-->
+      <!--    </div>-->
 
-<!-- Dropdown menu -->
-<!--    <div class="dropdown">-->
-<!--        <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton">Dropdown button</button>-->
-<!--        <div class="dropdown-menu" data-toggle-id="dropdownMenuButton">-->
-<!--            <a class="dropdown-item" href="#">Action</a>-->
-<!--            <a class="dropdown-item" href="#">Action #2</a>-->
-<!--            <a class="dropdown-item" href="#">Action #3</a>-->
-<!--        </div>-->
-<!--    </div>-->
+      <div class="wrap"></div>
 
-    <div class="wrap"></div>
+      <!--    Card-->
+      <div class="card">
+        <img
+          class="card-img"
+          src="https://ichef.bbci.co.uk/ace/standard/2048/cpsprodpb/3b89/live/60e7ae50-03dc-11f0-a387-437e2fb661fc.jpg"
+          alt="photo"
+        />
+        <div class="card-body">
+          <div class="card-title">Card title</div>
+          <p class="card-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
+            eligendi ipsum reprehenderit? Accusantium debitis deserunt eaque
+            eligendi illum iste labore nam quidem repellendus voluptatibus!
+            Aspernatur autem consectetur eum velit vero?Minima, obcaecati
+            similique. Culpa dolorum eaque quisquam sapiente sed ullam veritatis
+            voluptatum. Ad alias aspernatur, aut culpa dicta enim ex facilis,
+            hic, ipsam perferendis sint veritatis voluptatem! Doloremque, illo,
+            numquam.
+          </p>
+          <a href="#" class="btn btn-primary">Link to</a>
+        </div>
+      </div>
+    </div>
 
-</div>
-
-<script type="module" src="/js/main.js"></script>
-</body>
+    <script type="module" src="/js/main.js"></script>
+  </body>
 </html>
