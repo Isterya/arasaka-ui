@@ -11,6 +11,14 @@ $.prototype.modal = function () {
       document.body.style.overflow = 'hidden';
     });
   }
+
+  const closeElements = document.querySelectorAll('[data-close]');
+  closeElements.forEach((elem) => {
+    $(elem).click(() => {
+      $('.modal').fadeOut(500);
+      document.body.style.overflow = '';
+    });
+  });
 };
 
 $('[data-toggle="modal"]').modal();
