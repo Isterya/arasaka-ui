@@ -29,3 +29,35 @@ $.prototype.modal = function () {
 };
 
 $('[data-toggle="modal"]').modal();
+
+$.prototype.createModal = function ({ text, btns } = {}) {
+  for (let i = 0; i < this.length; i++) {
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.setAttribute('id', this[i].getAttribute('data-target').slice(1));
+
+    modal.innterHTML = `
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button class="close" data-close>
+              <span>&times;</span>
+            </button>
+
+            <div class="modal-header">
+              <div class="modal-title">
+                ${text.title}
+              </div>
+            </div>
+
+            <div class="modal-body">
+              ${text.body}
+            </div>
+
+            <div class="modal-footer">
+
+            </div>
+          </div>
+        </div>
+        `;
+  }
+};
