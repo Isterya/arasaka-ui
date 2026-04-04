@@ -26,3 +26,26 @@ $('.wrap').html(
 );
 
 $('.dropdown-toggle').dropdown();
+
+$('#trigger').click(() =>
+  $('#trigger').createModal({
+    text: {
+      title: 'Modal title',
+      body: 'Test Modal body',
+    },
+    btns: {
+      count: 2,
+      settings: [
+        ['Close', ['btn-danger', 'mr-10'], true],
+        [
+          'Save changes',
+          ['btn-success'],
+          false,
+          () => {
+            alert('Data is saved');
+          },
+        ],
+      ],
+    },
+  })
+);
