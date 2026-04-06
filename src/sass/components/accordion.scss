@@ -1,12 +1,3 @@
-$accordion-border-radius: 16px;
-$accordion-border-color: #e2e8f0;
-$accordion-bg: #ffffff;
-$accordion-heading-bg: #f8fafc;
-$accordion-heading-hover: #f1f5f9;
-$accordion-text-color: #1e293b;
-$accordion-icon-color: #64748b;
-$transition-speed: 0.2s;
-
 .accordion {
   display: flex;
   flex-direction: column;
@@ -19,66 +10,69 @@ $transition-speed: 0.2s;
 .accordion-heading {
   margin: 0;
   padding: 16px 20px;
-  background: $accordion-heading-bg;
-  border: 1px solid $accordion-border-color;
-  border-radius: $accordion-border-radius;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 500;
-  color: $accordion-text-color;
+  color: #1e293b;
   cursor: pointer;
-  transition: all $transition-speed ease;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   &::after {
-    content: '+';
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: $accordion-icon-color;
-    transition: transform $transition-speed ease;
-    line-height: 1;
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: #64748b;
+    transition: transform 0.2s ease;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 4V20M20 12H4' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+    mask-size: contain;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 4V20M20 12H4' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask-size: contain;
   }
 
-  &.active {
-    background: $accordion-bg;
+  &--active {
+    background: #ffffff;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-color: transparent;
 
     &::after {
-      content: '−';
-      transform: rotate(0deg);
+      transform: rotate(45deg);
     }
   }
 
   &:hover {
-    background: $accordion-heading-hover;
+    background: #f1f5f9;
   }
 }
 
 .accordion-block {
   max-height: 0;
   overflow: hidden;
-  background: $accordion-bg;
-  border-left: 1px solid $accordion-border-color;
-  border-right: 1px solid $accordion-border-color;
-  border-bottom: 1px solid $accordion-border-color;
-  border-bottom-left-radius: $accordion-border-radius;
-  border-bottom-right-radius: $accordion-border-radius;
-  transition: max-height $transition-speed ease-out, padding $transition-speed ease;
+  background: #ffffff;
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: max-height 0.2s ease-out, padding 0.2s ease;
   padding: 0 20px;
 
   p {
     margin: 0;
     padding: 16px 0;
-    color: lighten($accordion-text-color, 10%);
-    font-size: 0.95rem;
+    color: #334155;
+    font-size: 15px;
     line-height: 1.5;
   }
 
-  &.open {
+  &--open {
     max-height: 300px;
     padding: 0 20px;
   }
