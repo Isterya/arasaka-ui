@@ -3,6 +3,7 @@ import $ from '../core';
 $.prototype.modal = function (created) {
   for (let i = 0; i < this.length; i++) {
     const target = this[i].getAttribute('data-target');
+    const scroll = calcScroll();
 
     function calcScroll() {
       let div = document.createElement('div');
@@ -24,6 +25,7 @@ $.prototype.modal = function (created) {
       $(target).fadeIn(500);
 
       document.body.style.overflow = 'hidden';
+      document.body.style.marginRight = `${scroll}px`;
     });
 
     const closeElements = document.querySelectorAll(`${target} [data-close]`);
@@ -31,6 +33,7 @@ $.prototype.modal = function (created) {
       $(elem).click(() => {
         $(target).fadeOut(500);
         document.body.style.overflow = '';
+        document.body.style.marginRight = '';
 
         if (created) {
           document.querySelector(target).remove();
@@ -42,6 +45,7 @@ $.prototype.modal = function (created) {
       if (e.target.classList.contains('modal')) {
         $(target).fadeOut(500);
         document.body.style.overflow = '';
+        document.body.style.marginRight = '';
 
         if (created) {
           document.querySelector(target).remove();
