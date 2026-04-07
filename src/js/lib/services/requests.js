@@ -36,3 +36,7 @@ $.prototype.post = async function (url, data, dataTypeAnswer = 'text') {
       return await res.blob();
   }
 };
+
+$()
+  .get('https://jsonplaceholder.typicode.com/todos/1')
+  .then((res) => console.log(res));
