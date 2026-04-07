@@ -79,4 +79,12 @@
       background-color: rgba(0, 0, 0, .2);
     }
   }
+  
+  &-prev {
+    left: 0;
+  }
+
+  &-next {
+    right: 0;
+  }
 }
