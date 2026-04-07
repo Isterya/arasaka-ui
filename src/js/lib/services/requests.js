@@ -18,3 +18,21 @@ $.prototype.get = async function (url, dataTypeAnswer = 'json') {
       return await res.blob();
   }
 };
+
+$.prototype.post = async function (url, data, dataTypeAnswer = 'text') {
+  let res = await fetch(url, {
+    method: 'POST',
+    body: data,
+  });
+
+  switch (dataTypeAnswer) {
+    case 'json':
+      return await res.json();
+
+    case 'text':
+      return await res.text();
+
+    case 'blob':
+      return await res.blob();
+  }
+};
