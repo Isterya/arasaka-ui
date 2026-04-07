@@ -25,6 +25,16 @@ $.prototype.carousel = function () {
 
       slidesField.style.transform = `translateX(-${offset}px)`;
     });
+
+    $(this[i].querySelector('[data-slide="prev"]')).click(() => {
+      if (offset === 0) {
+        offset = +width.replace(/\D/g, '') * (slides.length - 1);
+      } else {
+        offset -= +width.replace(/\D/g, '');
+      }
+
+      slidesField.style.transform = `translateX(-${offset}px)`;
+    });
   }
 };
 
