@@ -8,6 +8,7 @@ $.prototype.carousel = function () {
 
     const slides = this[i].querySelectorAll('.carousel-item');
     const slidesField = this[i].querySelector('.carousel-slides');
+    const indicators = this[i].querySelectorAll('.carousel-indicators li');
 
     slidesField.style.width = 100 * slides.length + '%';
     slides.forEach((slide) => {
@@ -15,6 +16,7 @@ $.prototype.carousel = function () {
     });
 
     let offset = 0;
+    let slideIndex = 0;
 
     $(this[i].querySelector('[data-slide="next"]')).click((e) => {
       e.preventDefault();
@@ -26,6 +28,15 @@ $.prototype.carousel = function () {
       }
 
       slidesField.style.transform = `translateX(-${offset}px)`;
+
+      if (slideIndex === slides.length - 1) {
+        slideIndex = 0;
+      } else {
+        slideIndex++;
+      }
+
+      indicators.forEach((indicator) => indicator.classList.remove('active'));
+      indicators[slideIndex].classList.add('active');
     });
 
     $(this[i].querySelector('[data-slide="prev"]')).click((e) => {
@@ -38,6 +49,15 @@ $.prototype.carousel = function () {
       }
 
       slidesField.style.transform = `translateX(-${offset}px)`;
+
+      if (slideIndex === 0) {
+        slideIndex = slides.length - 1;
+      } else {
+        slideIndex--;
+      }
+
+      indicators.forEach((indicator) => indicator.classList.remove('active'));
+      indicators[slideIndex].classList.add('active');
     });
   }
 };
