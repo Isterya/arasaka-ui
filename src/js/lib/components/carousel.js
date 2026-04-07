@@ -59,6 +59,18 @@ $.prototype.carousel = function () {
       indicators.forEach((indicator) => indicator.classList.remove('active'));
       indicators[slideIndex].classList.add('active');
     });
+
+    const sliderId = this[i].getAttribute('id');
+    $(`#${sliderId} .carousel-indicators li`).click((e) => {
+      const slideTo = e.target.getAttribute('data-slide-to');
+
+      slideIndex = slideTo;
+      offset = +width.replace(/\D/g, '') * slideTo;
+
+      slidesField.style.transform = `translateX(-${offset}px)`;
+      indicators.forEach((indicator) => indicator.classList.remove('active'));
+      indicators[slideIndex].classList.add('active');
+    });
   }
 };
 
