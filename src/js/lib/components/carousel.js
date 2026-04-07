@@ -7,8 +7,9 @@ $.prototype.carousel = function () {
     ).width;
 
     const slides = this[i].querySelectorAll('.carousel-item');
-    this[i].querySelector('.carousel-slides').style.width =
-      100 * slides.length + '%';
+    const slidesField = this[i].querySelector('.carousel-slides');
+
+    slidesField.style.width = 100 * slides.length + '%';
     slides.forEach((slide) => {
       slide.style.width = width;
     });
